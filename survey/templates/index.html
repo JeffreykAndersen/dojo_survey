@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {%load static%}
+    <link rel="stylesheet" href="{%static 'style.css'%}">
+    <title>Document</title>
+</head>
+<body>
+    <div id="survey">
+        <form action="/result" method="POST">
+            {% csrf_token %}
+            <label for="name">Your Name: </label>
+            <input type="text" name="name">
+            <br>
+            <label for="location">Location:</label>
+            <select name="location" >
+                <option value="SF">San Fransico</option>
+                <option value="Sea">Seattle</option>
+                <option value="Mord">Mordor</option>
+                <option value="UD">The Upsidedown</option>
+            </select>
+            <br>
+            <label for="language">Favorite Language:</label>
+            <select name="language">
+                <option value="Python">Python</option>
+                <option value="JS">javascript</option>
+                <option value="HTML">HTML</option>
+                <option value="Kling">Klingon</option>
+            </select>
+            <br>
+            <label for="comment">Comments: </label>
+            <br>
+            <textarea name="comment" id="comment" cols="80" rows="10"></textarea>
+            <br>
+            <input type="submit" name="submit">
+        </form>
+    </div>
+    
+</body>
+</html>
